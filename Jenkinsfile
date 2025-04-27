@@ -16,10 +16,11 @@ echo "Publishinf JUnit test reports..."
   }
   }
   stage('Archieving Artifacts'){
+    steps{
 echo "Archieving important build artifacts..."
     archieveArtifacts artifacts : '**/target/*.jar', fingerprint:true
     }
-
+}
 }
 
 }
