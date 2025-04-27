@@ -1,5 +1,14 @@
 pipeline{
 agent any
+  tools {
+        maven 'TestMaven'  // Name of Maven from Jenkins Global Tool Configuration
+        jdk 'OpenJDK-17'   // Name of JDK from Jenkins Global Tool Configuration
+    }
+
+    environment {
+        REPORT_DIR = "target/surefire-reports"
+    }
+  
 stages {
   stage('Checkout'){
 steps{
