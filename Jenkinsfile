@@ -11,14 +11,14 @@ withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'TestMaven', mavenSetti
   }
   stage('Publish Test Results'){
 steps{
-echo "Publishinf JUnit test reports..."
+echo "Publishing JUnit test reports..."
   junit '**/target/surefire-reports/*.xml'
   }
   }
-  stage('Archieving Artifacts'){
+  stage('Archiving Artifacts'){
     steps{
-echo "Archieving important build artifacts..."
-    archieveArtifacts artifacts : '**/target/*.jar', fingerprint:true
+echo "Archiving important build artifacts..."
+    archiveArtifacts artifacts : '**/target/*.jar', fingerprint:true
     }
 }
 }
