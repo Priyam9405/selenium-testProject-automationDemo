@@ -8,6 +8,12 @@ withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'TestMaven', mavenSetti
 }    
     }
   }
+  stage('Publish Test Results'){
+steps{
+echo "Publishinf JUnit test reports..."
+  junit '**/target/surefire-reports/*.xml'
+  }
+  }
 
 }
 
