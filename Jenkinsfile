@@ -1,6 +1,12 @@
 pipeline{
 agent any
 stages {
+  stage('Checkout'){
+steps{
+  echo "Checking out code..."
+  checkout scm
+    }
+    }
   stage('Build & Test') {
     steps {
       echo "Building the project and running tests..."
