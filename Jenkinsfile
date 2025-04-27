@@ -28,5 +28,18 @@ echo "Archiving important build artifacts..."
     }
 }
 }
+   post {
+        always {
+            echo "Cleaning up workspace..."
+            cleanWs()
+        }
+        success {
+            echo "Build succeeded!"
+        }
+        failure {
+            echo "Build failed!"
+        }
+    }
+
 
 }
